@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
 
+
         mainBinding.mbutton1.setOnClickListener{
             FirstActivity.actionStart(this, "第四章")
         }
