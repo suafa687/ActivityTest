@@ -15,8 +15,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
-
-
+        // 第四章
         mainBinding.mbutton1.setOnClickListener{
             FirstActivity.actionStart(this, "第四章")
         }
