@@ -6,10 +6,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.activitytest.databinding.ElevenLayoutBinding
-import com.example.activitytest.four.base.BaseActivity
+import com.example.activitytest.databinding.DelevenLayoutBinding
+import com.example.activitytest.BaseActivity
 import com.example.activitytest.four.base.Msg
 import com.example.activitytest.four.base.MsgAdapter
+
 // import com.example.activitytest.databinding.ElevenLayoutBinding
 
 
@@ -22,14 +23,14 @@ class ElevenActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
-    private lateinit var elevenLayoutBinding: ElevenLayoutBinding
+    private lateinit var elevenLayoutBinding: DelevenLayoutBinding
     private val msgList = ArrayList<Msg>()
     private var adapter: MsgAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         supportActionBar?.hide()
-        elevenLayoutBinding = ElevenLayoutBinding.inflate(layoutInflater)
+        elevenLayoutBinding = DelevenLayoutBinding.inflate(layoutInflater)
         setContentView(elevenLayoutBinding.root)
 
         initMsg()

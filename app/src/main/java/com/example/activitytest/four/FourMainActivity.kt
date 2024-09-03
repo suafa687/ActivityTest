@@ -13,26 +13,27 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.activitytest.R
-import com.example.activitytest.four.base.BaseActivity
-import com.example.activitytest.databinding.FirstLayoutBinding
+import com.example.activitytest.databinding.DfirstLayoutBinding
+import com.example.activitytest.BaseActivity
 
-class FirstActivity : BaseActivity() {
+class FourMainActivity : BaseActivity() {
     companion object {
-        fun actionStart(context: Context, params:String) {
-            val intent = Intent(context, FirstActivity::class.java)
-            intent.putExtra("params",params)
+        fun actionStart(context: Context, params: String) {
+            val intent = Intent(context, FourMainActivity::class.java)
+            intent.putExtra("params", params)
             context.startActivity(intent)
         }
     }
+
     private val tag = "FirstActivity"
-    private var firstLayoutBinding: FirstLayoutBinding? = null;
+    private var firstLayoutBinding: DfirstLayoutBinding? = null;
     lateinit var lunch01: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(tag, "onCreate")
         Log.d(tag, "Task id is $taskId")
         enableEdgeToEdge()
-        firstLayoutBinding = FirstLayoutBinding.inflate(layoutInflater)
+        firstLayoutBinding = DfirstLayoutBinding.inflate(layoutInflater)
         setContentView(firstLayoutBinding?.root)
         lunch01 = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             //此处使用lambda表达式，是第二个参数ActivityResultCallback的实现

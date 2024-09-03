@@ -1,4 +1,4 @@
-package com.example.activitytest.four.base
+package com.example.activitytest
 
 import android.os.Bundle
 import android.util.Log

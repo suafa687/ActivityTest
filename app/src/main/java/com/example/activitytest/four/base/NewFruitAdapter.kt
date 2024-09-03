@@ -1,10 +1,8 @@
 package com.example.activitytest.four.base
 
-import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -20,7 +18,7 @@ class NewFruitAdapter(val fruitList: List<Fruit>, val layoutId: Int) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.fruit_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.dfruit_item, parent, false)
         val viewHolder = ViewHolder(view)
         viewHolder.itemView.setOnClickListener {
             val position = viewHolder.adapterPosition

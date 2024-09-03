@@ -8,8 +8,8 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import com.example.activitytest.R
-import com.example.activitytest.four.base.BaseActivity
-import com.example.activitytest.databinding.ThirdLayoutBinding
+import com.example.activitytest.databinding.DthirdLayoutBinding
+import com.example.activitytest.BaseActivity
 
 class ThirdActivity : BaseActivity(), View.OnClickListener {
     companion object {
@@ -21,7 +21,7 @@ class ThirdActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
-    private var thirdLayoutBinding: ThirdLayoutBinding? = null
+    private var thirdLayoutBinding: DthirdLayoutBinding? = null
 
     //onCreate()。这个方法你已经看到过很多次了，
     // 我们在每个Activity中都重写了这个方法，
@@ -33,7 +33,7 @@ class ThirdActivity : BaseActivity(), View.OnClickListener {
         val extra_data = intent.getStringExtra("extra_data")
         Toast.makeText(this, "传递数据$extra_data", Toast.LENGTH_SHORT).show()
 
-        thirdLayoutBinding = ThirdLayoutBinding.inflate(layoutInflater)
+        thirdLayoutBinding = DthirdLayoutBinding.inflate(layoutInflater)
         setContentView(thirdLayoutBinding?.root)
         thirdLayoutBinding?.button8?.setOnClickListener(this)
     }

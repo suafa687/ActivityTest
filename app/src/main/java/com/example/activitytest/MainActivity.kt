@@ -3,12 +3,11 @@ package com.example.activitytest
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.activitytest.databinding.ActivityMainBinding
-import com.example.activitytest.four.FirstActivity
+import com.example.activitytest.five.FiveMainActivity
+import com.example.activitytest.four.FourMainActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private lateinit var mainBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +16,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(mainBinding.root)
         // 第四章
         mainBinding.mbutton1.setOnClickListener{
-            FirstActivity.actionStart(this, "第四章")
+            FourMainActivity.actionStart(this, "第四章")
+        }
+
+        // 第五章
+        mainBinding.mbutton2.setOnClickListener{
+            FiveMainActivity.actionStart(this, "第五章")
         }
     }
 }

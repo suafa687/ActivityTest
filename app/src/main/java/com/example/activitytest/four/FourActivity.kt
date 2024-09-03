@@ -5,8 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import com.example.activitytest.four.base.BaseActivity
-import com.example.activitytest.databinding.FourLayoutBinding
+import com.example.activitytest.databinding.DfourLayoutBinding
+import com.example.activitytest.BaseActivity
 
 class FourActivity : BaseActivity() {
     companion object {
@@ -17,7 +17,7 @@ class FourActivity : BaseActivity() {
         }
     }
 
-    private var fourLayoutBinding: FourLayoutBinding? = null
+    private var fourLayoutBinding: DfourLayoutBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,7 +26,7 @@ class FourActivity : BaseActivity() {
         val extra_data = intent.getStringExtra("data")
         Toast.makeText(this, "传递数据$extra_data", Toast.LENGTH_SHORT).show()
 
-        fourLayoutBinding = FourLayoutBinding.inflate(layoutInflater)
+        fourLayoutBinding = DfourLayoutBinding.inflate(layoutInflater)
         setContentView(fourLayoutBinding?.root)
 
         fourLayoutBinding?.button41?.setOnClickListener {

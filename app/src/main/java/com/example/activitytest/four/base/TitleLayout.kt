@@ -11,7 +11,7 @@ import com.example.activitytest.R
 
 class TitleLayout(context: Context, attrs: AttributeSet) : LinearLayout(context, attrs) {
     init {
-        LayoutInflater.from(context).inflate(R.layout.title, this)
+        LayoutInflater.from(context).inflate(R.layout.dtitle, this)
         rootView.findViewById<Button>(R.id.titleBack).setOnClickListener {
             val activity = context as Activity
             activity.finish()

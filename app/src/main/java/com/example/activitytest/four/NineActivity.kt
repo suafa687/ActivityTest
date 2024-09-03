@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import com.example.activitytest.R
-import com.example.activitytest.four.base.BaseActivity
+import com.example.activitytest.databinding.DnineLayoutBinding
+import com.example.activitytest.BaseActivity
 import com.example.activitytest.four.base.Fruit
 import com.example.activitytest.four.base.FruitAdapter
-import com.example.activitytest.databinding.NineLayoutBinding
 
 class NineActivity : BaseActivity() {
     companion object {
@@ -20,23 +20,24 @@ class NineActivity : BaseActivity() {
         }
     }
 
-    private var nineLayoutBinding: NineLayoutBinding? = null
+    private var nineLayoutBinding: DnineLayoutBinding? = null
     private val fruitList = ArrayList<Fruit>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         supportActionBar?.hide()
-        nineLayoutBinding = NineLayoutBinding.inflate(layoutInflater)
+        nineLayoutBinding = DnineLayoutBinding.inflate(layoutInflater)
         setContentView(nineLayoutBinding?.root)
         initFruits() // 初始化水果数据
-        val adapter = FruitAdapter(this, R.layout.fruit_item, fruitList)
+        val adapter = FruitAdapter(this, R.layout.dfruit_item, fruitList)
         nineLayoutBinding?.listView?.adapter = adapter
         nineLayoutBinding?.listView?.setOnItemClickListener { _, _, position, _ ->
             val fruit = fruitList[position]
             Toast.makeText(this, fruit.name, Toast.LENGTH_SHORT).show()
         }
     }
+
     private fun initFruits() {
         repeat(2) {
             fruitList.add(Fruit("Apple", R.drawable.apple_pic))

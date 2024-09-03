@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import com.example.activitytest.R
-import com.example.activitytest.four.base.BaseActivity
+import com.example.activitytest.BaseActivity
 
 class SixActivity : BaseActivity() {
     companion object {
@@ -15,9 +15,10 @@ class SixActivity : BaseActivity() {
             context.startActivity(intent)
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.six_layout)
+        setContentView(R.layout.dsix_layout)
     }
 }

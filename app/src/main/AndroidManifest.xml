@@ -13,8 +13,14 @@
         android:theme="@style/Theme.ActivityTest"
         tools:targetApi="31">
         <activity
+            android:name=".five.FiveMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".five.FirstActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,9 +59,9 @@
             android:label="DialogTest"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
-            android:name=".four.FirstActivity"
+            android:name=".four.FourMainActivity"
             android:exported="false"
-            android:label="This is FirstActivity"/>
+            android:label="This is FirstActivity" />
         <activity
             android:name=".four.SecondActivity"
             android:exported="true"

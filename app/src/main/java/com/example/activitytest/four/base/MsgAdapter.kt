@@ -16,13 +16,13 @@ class MsgAdapter(val msgList: List<Msg>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         if (viewType == Msg.TYPE_RECEIVED) {
             val view = LayoutInflater.from(parent.context).inflate(
-                R.layout.msg_left_item,
+                R.layout.dmsg_left_item,
                 parent, false
             )
             LeftViewHolder(view)
         } else {
             val view = LayoutInflater.from(parent.context).inflate(
-                R.layout.msg_right_item,
+                R.layout.dmsg_right_item,
                 parent, false
             )
             RightViewHolder(view)
