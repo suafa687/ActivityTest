@@ -26,5 +26,13 @@ class FiveMainActivity : BaseActivity() {
         emainLayout.button51.setOnClickListener {
             FirstActivity.actionStart(this, "par1")
         }
+
+        emainLayout.button52.setOnClickListener{
+            SecondActivity.actionStart(this, "par1")
+        }
+
+        emainLayout.button53.setOnClickListener{
+            ThirdActivity.actionStart(this, "par1")
+        }
     }
 }
