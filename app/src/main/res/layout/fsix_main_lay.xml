@@ -5,33 +5,32 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".six.SixMainActivity">
     <Button
-        android:id="@+id/mbutton1"
+        android:id="@+id/mbutton61"
         android:layout_width="409dp"
         android:layout_height="48dp"
         android:layout_marginTop="52dp"
-        android:text="第四章"
+        android:text="标准广播"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/mbutton2"
+        android:id="@+id/mbutton62"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="第五章"
-        app:layout_constraintTop_toBottomOf="@+id/mbutton1"
+        android:text="有序广播"
+        app:layout_constraintTop_toBottomOf="@+id/mbutton61"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/mbutton3"
+        android:id="@+id/mbutton63"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="第六章"
-        app:layout_constraintTop_toBottomOf="@+id/mbutton2"
+        android:text="有序广播截断"
+        app:layout_constraintTop_toBottomOf="@+id/mbutton62"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
