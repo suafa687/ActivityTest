@@ -34,4 +34,13 @@
         android:text="第六章"
         app:layout_constraintTop_toBottomOf="@+id/mbutton2"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/forceOffline"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="退出登录"
+        app:layout_constraintTop_toBottomOf="@+id/mbutton3"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

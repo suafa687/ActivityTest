@@ -1,5 +1,6 @@
 package com.example.activitytest
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +29,12 @@ class MainActivity : BaseActivity() {
         // 第六章
         mainBinding.mbutton3.setOnClickListener{
             SixMainActivity.actionStart(this, "第六章")
+        }
+
+        mainBinding.forceOffline.setOnClickListener {
+            val intent = Intent("com.example.activitytest.FORCE_OFFLINE")
+            intent.setPackage(packageName)
+            sendBroadcast(intent)
         }
     }
 }

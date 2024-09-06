@@ -7,10 +7,8 @@ import android.content.IntentFilter
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import com.example.activitytest.BaseActivity
 import com.example.activitytest.databinding.FsixMainLayBinding
-import com.example.activitytest.four.FourMainActivity
 
 class SixMainActivity : BaseActivity() {
     companion object {
@@ -34,22 +32,22 @@ class SixMainActivity : BaseActivity() {
         timeChangeReceiver = TimeChangeReceiver()
         registerReceiver(timeChangeReceiver, intentFilter)
 
-        fsixMainLayBinding.mbutton61.setOnClickListener{
+        fsixMainLayBinding.mbutton61.setOnClickListener {
             val intent = Intent("com.example.broadcasttest.MY_BROADCAST")
             intent.setPackage(packageName)
-            intent.putExtra("data","我发送了一条广播")
+            intent.putExtra("data", "我发送了一条广播")
             sendBroadcast(intent)
         }
-        fsixMainLayBinding.mbutton62.setOnClickListener{
+        fsixMainLayBinding.mbutton62.setOnClickListener {
             val intent = Intent("com.example.broadcasttest.MY_BROADCAST")
             intent.setPackage(packageName)
-            intent.putExtra("data","我发送了一条广播")
+            intent.putExtra("data", "我发送了一条广播")
             sendOrderedBroadcast(intent, null)
         }
-        fsixMainLayBinding.mbutton63.setOnClickListener{
+        fsixMainLayBinding.mbutton63.setOnClickListener {
             val intent = Intent("com.example.broadcasttest.MY_BROADCAST")
             intent.setPackage(packageName)
-            intent.putExtra("data","我发送了一条广播")
+            intent.putExtra("data", "我发送了一条广播")
             intent.putExtra("abort", true)
             sendOrderedBroadcast(intent, null)
         }
