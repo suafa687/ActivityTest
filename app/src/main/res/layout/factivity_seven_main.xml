@@ -30,4 +30,35 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="恢复"/>
+
+    <Button
+        android:id="@+id/createDatabase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="创建sqlite数据库"
+        />
+    <Button
+        android:id="@+id/addDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加数据"
+        />
+    <Button
+        android:id="@+id/updateDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更新数据"
+        />
+    <Button
+        android:id="@+id/deleteDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除数据"
+        />
+    <Button
+        android:id="@+id/queryDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询数据"
+        />
 </LinearLayout>
