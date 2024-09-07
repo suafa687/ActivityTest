@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import com.example.activitytest.BaseActivity
-import com.example.activitytest.databinding.FsixMainLayBinding
+import com.example.activitytest.databinding.EsixMainLayBinding
 
 class SixMainActivity : BaseActivity() {
     companion object {
@@ -20,31 +20,31 @@ class SixMainActivity : BaseActivity() {
     }
 
     lateinit var timeChangeReceiver: TimeChangeReceiver
-    lateinit var fsixMainLayBinding: FsixMainLayBinding
+    lateinit var esixMainLayBinding: EsixMainLayBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        fsixMainLayBinding = FsixMainLayBinding.inflate(layoutInflater)
-        setContentView(fsixMainLayBinding.root)
+        esixMainLayBinding = EsixMainLayBinding.inflate(layoutInflater)
+        setContentView(esixMainLayBinding.root)
 
         val intentFilter = IntentFilter()
         intentFilter.addAction("android.intent.action.TIME_TICK")
         timeChangeReceiver = TimeChangeReceiver()
         registerReceiver(timeChangeReceiver, intentFilter)
 
-        fsixMainLayBinding.mbutton61.setOnClickListener {
+        esixMainLayBinding.mbutton61.setOnClickListener {
             val intent = Intent("com.example.broadcasttest.MY_BROADCAST")
             intent.setPackage(packageName)
             intent.putExtra("data", "我发送了一条广播")
             sendBroadcast(intent)
         }
-        fsixMainLayBinding.mbutton62.setOnClickListener {
+        esixMainLayBinding.mbutton62.setOnClickListener {
             val intent = Intent("com.example.broadcasttest.MY_BROADCAST")
             intent.setPackage(packageName)
             intent.putExtra("data", "我发送了一条广播")
             sendOrderedBroadcast(intent, null)
         }
-        fsixMainLayBinding.mbutton63.setOnClickListener {
+        esixMainLayBinding.mbutton63.setOnClickListener {
             val intent = Intent("com.example.broadcasttest.MY_BROADCAST")
             intent.setPackage(packageName)
             intent.putExtra("data", "我发送了一条广播")
