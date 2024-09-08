@@ -1,7 +1,6 @@
 package com.example.activitytest.seven
 
 import android.annotation.SuppressLint
-import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -9,8 +8,9 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import com.example.activitytest.BaseActivity
 import com.example.activitytest.databinding.FactivitySevenMainBinding
+import com.example.activitytest.seven.base.Book
 import com.example.activitytest.seven.base.MyDatabaseHelper
-import com.example.activitytest.six.ktl.build
+import com.example.activitytest.seven.base.open
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.IOException
@@ -27,6 +27,7 @@ class SevenMainActivity : BaseActivity() {
     }
 
     lateinit var sevenMainBinding: FactivitySevenMainBinding
+
     @SuppressLint("Range")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,16 +42,17 @@ class SevenMainActivity : BaseActivity() {
             Toast.makeText(this, "Restoring succeeded", Toast.LENGTH_SHORT).show()
         }
 
-        sevenMainBinding.mbutton73.setOnClickListener{
+        sevenMainBinding.mbutton73.setOnClickListener {
             val text = sevenMainBinding.editText72.text
-            val editor = getSharedPreferences("data", Context.MODE_PRIVATE).edit()
-            editor.putString("name", text.toString())
-            editor.putInt("age", 28)
-            editor.putBoolean("married", false)
-            editor.apply()
+            getSharedPreferences("data", Context.MODE_PRIVATE).open {
+                putString("name", text.toString())
+                putInt("age", 28)
+                putBoolean("married", false)
+            }
+
             sevenMainBinding.editText72.setText("")
         }
-        sevenMainBinding.mbutton74.setOnClickListener{
+        sevenMainBinding.mbutton74.setOnClickListener {
             val prefs = getSharedPreferences("data", Context.MODE_PRIVATE)
             val name = prefs.getString("name", "")
             val age = prefs.getInt("age", 0)
@@ -63,60 +65,62 @@ class SevenMainActivity : BaseActivity() {
             dbHelper.writableDatabase
         }
 
-        sevenMainBinding.addDate.setOnClickListener{
+        sevenMainBinding.addDate.setOnClickListener {
             val db = dbHelper.writableDatabase
-            val values1 = ContentValues().apply {
-                // 开始组装第一条数据
-                put("name", "The Da Vinci Code")
-                put("author", "Dan Brown")
-                put("pages", 454)
-                put("price", 16.96)
-            }
-            db.insert("Book", null, values1) // 插入第一条数据
-            val values2 = ContentValues().apply {
-                // 开始组装第二条数据
-                put("name", "The Lost Symbol")
-                put("author", "Dan Brown")
-                put("pages", 510)
-                put("price", 19.95)
-            }
-            db.insert("Book", null, values2) // 插入第二条数据
+            val book1 = Book("The Da Vinci Code", "Dan Brown", 454, 16.96)
+            book1.insert(db) // 插入第一条数据
+            val book2 = Book("The Lost Symbol", "Dan Brown", 510, 19.95)
+            book2.insert(db) // 插入第二条数据
         }
 
-        sevenMainBinding.updateDate.setOnClickListener{
+        sevenMainBinding.updateDate.setOnClickListener {
             val db = dbHelper.writableDatabase
-            val values = ContentValues()
-            values.put("price", 10.99)
-            db.update("Book", values, "name = ?", arrayOf("The Da Vinci Code"))
+            val books = Book.query(db, "The Da Vinci Code")
+            books.forEach({ v ->
+                v.price = 10.99
+                v.update(db)
+            })
         }
-
-        sevenMainBinding.deleteDate.setOnClickListener{
+        var flag = false
+        sevenMainBinding.deleteDate.setOnClickListener {
             val db = dbHelper.writableDatabase
-            db.delete("Book", "pages > ?", arrayOf("500"))
+            if (flag) {
+                val books = Book.query(db, "The Da Vinci Code")
+                books.forEach({ v -> v.delete(db) })
+                flag = false
+            } else {
+                val books = Book.query(db, "The Lost Symbol")
+                books.forEach({ v -> v.delete(db) })
+                flag = true
+            }
         }
-        sevenMainBinding.queryDate.setOnClickListener{
+        sevenMainBinding.queryDate.setOnClickListener {
             val db = dbHelper.writableDatabase
             // 查询Book表中所有的数据
-            val cursor = db.query("Book", null, null, null, null, null, null)
-            if (cursor.moveToFirst()) {
-                var text : String = ""
-                do {
-                    // 遍历Cursor对象，取出数据并打印
-                    val name = cursor.getString(cursor.getColumnIndex("name"))
-                    val author = cursor.getString(cursor.getColumnIndex("author"))
-                    val pages = cursor.getInt(cursor.getColumnIndex("pages"))
-                    val price = cursor.getDouble(cursor.getColumnIndex("price"))
-                    val result = StringBuilder().build {
-                        append("book name is $name\n")
-                        append("book author is $author\n")
-                        append("book pages is $pages\n")
-                        append("book price is $price\n")
-                    }
-                    text = text.plus(result)
-                } while (cursor.moveToNext())
-                sevenMainBinding.editText72.setText(text)
+            val books = Book.query(db, null)
+            var text: String = ""
+            books.forEach({ v -> text = text.plus(v.toString()) })
+            sevenMainBinding.editText72.setText(text)
+        }
+        var transactionFlag = false
+        sevenMainBinding.replaceData.setOnClickListener {
+            val db = dbHelper.writableDatabase
+            db.beginTransaction() // 开启事务
+            try {
+                db.delete("Book", null, null)
+                if (!transactionFlag) {
+                    // 手动抛出一个异常，让事务失败
+                    transactionFlag = true
+                    throw NullPointerException()
+                }
+                val values = Book("Game of Thrones", "George Martin", 720, 20.85)
+                db.insert("Book", null, values.getContentValues())
+                db.setTransactionSuccessful() // 事务已经执行成功
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally {
+                db.endTransaction() // 结束事务
             }
-            cursor.close()
         }
     }
 
@@ -154,8 +158,5 @@ class SevenMainActivity : BaseActivity() {
         return content.toString()
     }
 
-    fun StringBuilder.build(block: StringBuilder.() -> Unit): StringBuilder {
-        block()
-        return this
-    }
+
 }

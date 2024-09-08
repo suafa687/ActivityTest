@@ -16,7 +16,7 @@ fun num1AndNum2(num1: Int, num2: Int, operation: (Int, Int) -> Int): Int {
 }
 
 fun StringBuilder.build(block: StringBuilder.() -> Unit): StringBuilder {
-    block()
+    this.block()
     return this
 }
 

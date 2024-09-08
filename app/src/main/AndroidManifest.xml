@@ -15,6 +15,9 @@
         android:theme="@style/Theme.ActivityTest"
         tools:targetApi="31">
         <activity
+            android:name=".eight.EightMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".seven.SevenMainActivity"
             android:exported="false" />
         <activity
@@ -73,7 +76,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".four.ElevenActivity"
             android:exported="false" />
