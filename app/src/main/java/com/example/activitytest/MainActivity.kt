@@ -44,5 +44,17 @@ class MainActivity : BaseActivity() {
         mainBinding.mbutton5.setOnClickListener {
             EightMainActivity.actionStart(this, "第八章")
         }
+        // 第九章
+        mainBinding.mbutton5.setOnClickListener {
+            EightMainActivity.actionStart(this, "第九章")
+        }
+        // 第十章
+        mainBinding.mbutton5.setOnClickListener {
+            EightMainActivity.actionStart(this, "第十章")
+        }
+        // 第十一章
+        mainBinding.mbutton5.setOnClickListener {
+            EightMainActivity.actionStart(this, "第十一章")
+        }
     }
 }

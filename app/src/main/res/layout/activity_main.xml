@@ -22,7 +22,7 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="第四章"
+        android:text="第四章 UI"
         app:layout_constraintTop_toBottomOf="@+id/forceOffline"
         tools:ignore="MissingConstraints" />
 
@@ -31,7 +31,7 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="第五章"
+        android:text="第五章 兼容平板"
         app:layout_constraintTop_toBottomOf="@+id/mbutton1"
         tools:ignore="MissingConstraints" />
 
@@ -40,7 +40,7 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="第六章"
+        android:text="第六章 广播机制"
         app:layout_constraintTop_toBottomOf="@+id/mbutton2"
         tools:ignore="MissingConstraints" />
 
@@ -49,7 +49,7 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="第七章"
+        android:text="第七章 数据持久化"
         app:layout_constraintTop_toBottomOf="@+id/mbutton3"
         tools:ignore="MissingConstraints" />
     <Button
@@ -57,8 +57,34 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="第八章"
+        android:text="第八章 跨程序共享数据"
         app:layout_constraintTop_toBottomOf="@+id/mbutton4"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/mbutton6"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="第九章 手机多媒体"
+        app:layout_constraintTop_toBottomOf="@+id/mbutton5"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/mbutton7"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="第十章 后台服务"
+        app:layout_constraintTop_toBottomOf="@+id/mbutton6"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/mbutton8"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="第十一章 网络技术"
+        app:layout_constraintTop_toBottomOf="@+id/mbutton7"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
