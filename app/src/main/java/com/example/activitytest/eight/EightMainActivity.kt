@@ -14,9 +14,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.activitytest.BaseActivity
 import com.example.activitytest.databinding.GactivityEightMainBinding
 
-class EightMainActivity : AppCompatActivity() {
+class EightMainActivity : BaseActivity() {
     companion object {
         fun actionStart(context: Context, params: String) {
             val intent = Intent(context, EightMainActivity::class.java)
@@ -32,7 +33,7 @@ class EightMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        supportActionBar?.hide()
+//        supportActionBar?.hide()
         gactive = GactivityEightMainBinding.inflate(layoutInflater)
         setContentView(gactive.root)
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, contactsList)
@@ -48,11 +49,14 @@ class EightMainActivity : AppCompatActivity() {
             }
         }
 
-        gactive.readContacts.setOnClickListener{
+        gactive.readContacts.setOnClickListener {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
-                != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this,
-                    arrayOf(Manifest.permission.READ_CONTACTS), 2)
+                != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.READ_CONTACTS), 2
+                )
             } else {
                 readContacts()
             }
@@ -77,7 +81,8 @@ class EightMainActivity : AppCompatActivity() {
                     ).show()
                 }
             }
-            2-> {
+
+            2 -> {
                 if (grantResults.isNotEmpty() &&
                     grantResults[0] == PackageManager.PERMISSION_GRANTED
                 ) {
@@ -101,19 +106,27 @@ class EightMainActivity : AppCompatActivity() {
             e.printStackTrace()
         }
     }
+
     @SuppressLint("Range")
     private fun readContacts() {
         // 查询联系人数据
         contentResolver.query(
             ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-            null, null, null, null)?.apply {
+            null, null, null, null
+        )?.apply {
             while (moveToNext()) {
                 // 获取联系人姓名
-                val displayName = getString(getColumnIndex(
-                    ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))
+                val displayName = getString(
+                    getColumnIndex(
+                        ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME
+                    )
+                )
                 // 获取联系人手机号
-                val number = getString(getColumnIndex(
-                    ContactsContract.CommonDataKinds.Phone.NUMBER))
+                val number = getString(
+                    getColumnIndex(
+                        ContactsContract.CommonDataKinds.Phone.NUMBER
+                    )
+                )
                 contactsList.add("$displayName\n$number")
             }
             adapter.notifyDataSetChanged()

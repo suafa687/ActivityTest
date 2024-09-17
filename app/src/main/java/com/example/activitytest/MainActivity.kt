@@ -7,6 +7,7 @@ import com.example.activitytest.databinding.ActivityMainBinding
 import com.example.activitytest.eight.EightMainActivity
 import com.example.activitytest.five.FiveMainActivity
 import com.example.activitytest.four.FourMainActivity
+import com.example.activitytest.nine.NineActivity
 import com.example.activitytest.seven.SevenMainActivity
 import com.example.activitytest.six.SixMainActivity
 
@@ -45,15 +46,15 @@ class MainActivity : BaseActivity() {
             EightMainActivity.actionStart(this, "第八章")
         }
         // 第九章
-        mainBinding.mbutton5.setOnClickListener {
-            EightMainActivity.actionStart(this, "第九章")
+        mainBinding.mbutton6.setOnClickListener {
+            NineActivity.actionStart(this, "第九章")
         }
         // 第十章
-        mainBinding.mbutton5.setOnClickListener {
+        mainBinding.mbutton7.setOnClickListener {
             EightMainActivity.actionStart(this, "第十章")
         }
         // 第十一章
-        mainBinding.mbutton5.setOnClickListener {
+        mainBinding.mbutton8.setOnClickListener {
             EightMainActivity.actionStart(this, "第十一章")
         }
     }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/noticeContent"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="center_vertical" />
+
+    <Button
+        android:id="@+id/hNotice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="通知" />
+
+    <Button
+        android:id="@+id/hcamra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="照片" />
+
+    <Button
+        android:id="@+id/haudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="音频" />
+
+    <Button
+        android:id="@+id/hvideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="视频" />
+</LinearLayout>
