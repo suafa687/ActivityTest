@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+    <Button
+        android:id="@+id/changeTextBtn"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="子线程更新UI" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:text="Hello world"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/startServiceBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Service" />
+
+    <Button
+        android:id="@+id/stopServiceBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop Service" />
+
+    <Button
+        android:id="@+id/bindServiceBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bind Service" />
+
+    <Button
+        android:id="@+id/unbindServiceBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Unbind Service" />
+
+    <Button
+        android:id="@+id/startIntentServiceBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start IntentService" />
+</LinearLayout>
