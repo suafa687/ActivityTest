@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import com.example.activitytest.databinding.ActivityMainBinding
 import com.example.activitytest.eight.EightMainActivity
+import com.example.activitytest.eleven.ElevenMainActivity
 import com.example.activitytest.five.FiveMainActivity
 import com.example.activitytest.four.FourMainActivity
 import com.example.activitytest.nine.NineActivity
@@ -56,7 +57,7 @@ class MainActivity : BaseActivity() {
         }
         // 第十一章
         mainBinding.mbutton8.setOnClickListener {
-            EightMainActivity.actionStart(this, "第十一章")
+            ElevenMainActivity.actionStart(this, "第十一章")
         }
     }
 }
