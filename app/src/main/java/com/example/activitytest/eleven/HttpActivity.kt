@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.activitytest.BaseActivity
 import com.example.activitytest.databinding.JActivityHttpBinding
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -12,7 +13,7 @@ import java.net.HttpURLConnection
 import java.net.URL
 import kotlin.concurrent.thread
 
-class HttpActivity : AppCompatActivity() {
+class HttpActivity : BaseActivity() {
     companion object {
         fun actionStart(context: Context, params: String) {
             val intent = Intent(context, HttpActivity::class.java)

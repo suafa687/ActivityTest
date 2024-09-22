@@ -5,26 +5,11 @@
     android:layout_height="match_parent" >
 
     <Button
-        android:id="@+id/jsonRequestBtn"
+        android:id="@+id/userRequestBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="FastJson" />
-    <Button
-        android:id="@+id/gsonRequestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Gson" />
-    <Button
-        android:id="@+id/pullRequestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pull_XML" />
-    <Button
-        android:id="@+id/saxRequestBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SAX_XML" />
+        android:text="Retrofit" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent" >

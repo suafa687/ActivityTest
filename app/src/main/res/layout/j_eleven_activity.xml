@@ -23,4 +23,9 @@
         android:layout_height="wrap_content"
         android:text="OKHTTP" />
 
+    <Button
+        android:id="@+id/retrofitHttpBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retrofit" />
 </LinearLayout>

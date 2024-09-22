@@ -39,5 +39,8 @@ class ElevenMainActivity : BaseActivity() {
         elevenBind.okHttpBtn.setOnClickListener{
             OkHttpActivity.actionStart(this,"okhttp")
         }
+        elevenBind.retrofitHttpBtn.setOnClickListener{
+            RetrofitActivity.actionStart(this, "Retrofit")
+        }
     }
 }
