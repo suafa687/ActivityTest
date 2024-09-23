@@ -1,4 +1,4 @@
-package com.example.activitytest.eleven.base
+package com.example.activitytest.eleven.model
 
 import com.google.gson.Gson
 
