@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import com.example.activitytest.BaseActivity
 import com.example.activitytest.databinding.JRetrofitActivityBinding
 import com.example.activitytest.eleven.model.User
+import com.example.activitytest.eleven.retrofit.ServiceCreator
 import com.example.activitytest.eleven.retrofit.UserService
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -32,11 +33,7 @@ class RetrofitActivity : BaseActivity() {
         jRetrofitActivityBinding = JRetrofitActivityBinding.inflate(layoutInflater)
         setContentView(jRetrofitActivityBinding.root)
 
-        val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.0.105:8085/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        val userService = retrofit.create(UserService::class.java)
+        val userService = ServiceCreator.create<UserService>()
 
         jRetrofitActivityBinding.useAllRequestBtn.setOnClickListener {
             userService.queryAllJson().enqueue(object : Callback<List<User>> {
