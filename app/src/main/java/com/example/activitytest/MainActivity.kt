@@ -12,6 +12,7 @@ import com.example.activitytest.nine.NineActivity
 import com.example.activitytest.seven.SevenMainActivity
 import com.example.activitytest.six.SixMainActivity
 import com.example.activitytest.ten.TenMainActivity
+import com.example.activitytest.twelve.TwelveMainActivity
 
 class MainActivity : BaseActivity() {
     private lateinit var mainBinding: ActivityMainBinding
@@ -58,6 +59,10 @@ class MainActivity : BaseActivity() {
         // 第十一章
         mainBinding.mbutton8.setOnClickListener {
             ElevenMainActivity.actionStart(this, "第十一章")
+        }
+        // 第十二章
+        mainBinding.mbutton9.setOnClickListener {
+            TwelveMainActivity.actionStart(this, "第十二章")
         }
     }
 }

@@ -30,6 +30,9 @@
         android:theme="@style/Theme.ActivityTest"
         tools:targetApi="31">
         <activity
+            android:name=".twelve.TwelveMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".eleven.RetrofitActivity"
             android:exported="false" />
         <activity
