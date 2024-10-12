@@ -13,7 +13,7 @@ okhttpVersion = "4.9.1"
 gsonVersion = "2.8.5"
 firebaseCrashlyticsBuildtools = "3.0.2"
 retrofitVersion = "2.6.1"
-
+circleImageViewVersion = "3.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,6 +29,7 @@ gson = { group = "com.google.code.gson", name = "gson", version.ref = "gsonVersi
 firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "firebase-crashlytics-buildtools", version.ref = "firebaseCrashlyticsBuildtools" }
 retrofit2 = {group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVersion"}
 retrofit2-converter-gson= {group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitVersion"}
+circleImageViewVersion = {group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImageViewVersion"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -29,23 +29,14 @@ class TwelveMainActivity : BaseActivity() {
         enableEdgeToEdge()
         kTwelveMainBinding = KTwelveMainBinding.inflate(layoutInflater)
         setContentView(kTwelveMainBinding.root)
-        setSupportActionBar(kTwelveMainBinding.toolbar)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.toolbar, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.backup -> Toast.makeText(this, "You clicked Backup",
-                Toast.LENGTH_SHORT).show()
-            R.id.delete -> Toast.makeText(this, "You clicked Delete",
-                Toast.LENGTH_SHORT).show()
-            R.id.settings -> Toast.makeText(this, "You clicked Settings",
-                Toast.LENGTH_SHORT).show()
+        kTwelveMainBinding.toolBarBtn.setOnClickListener{
+            ToolbarActivity.actionStart(this,"toolbar")
         }
-        return true
+        kTwelveMainBinding.drawerLayoutBtn.setOnClickListener{
+            DrawerLayoutActivity.actionStart(this,"DrawerLayout")
+        }
+        kTwelveMainBinding.navigationViewBtn.setOnClickListener{
+            NavigationViewActivity.actionStart(this, "NavigationView")
+        }
     }
 }
