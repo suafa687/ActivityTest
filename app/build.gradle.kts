@@ -39,6 +39,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.swiperefreshlayout)
+    implementation(libs.glide)
     implementation(libs.gson)
     implementation(libs.okhttp)
     implementation(libs.retrofit2)

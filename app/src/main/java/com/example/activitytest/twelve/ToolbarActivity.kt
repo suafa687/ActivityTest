@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.activitytest.BaseActivity
 import com.example.activitytest.R
 import com.example.activitytest.databinding.KActivityToolbarBinding
+import com.example.activitytest.twelve.base.showToast
 
 class ToolbarActivity : BaseActivity() {
     companion object {
@@ -38,20 +39,9 @@ class ToolbarActivity : BaseActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.backup -> Toast.makeText(
-                this, "You clicked Backup",
-                Toast.LENGTH_SHORT
-            ).show()
-
-            R.id.delete -> Toast.makeText(
-                this, "You clicked Delete",
-                Toast.LENGTH_SHORT
-            ).show()
-
-            R.id.settings -> Toast.makeText(
-                this, "You clicked Settings",
-                Toast.LENGTH_SHORT
-            ).show()
+            R.id.backup -> "You clicked Backup".showToast(this)
+            R.id.delete -> "You clicked Delete".showToast(this)
+            R.id.settings -> "You clicked Settings".showToast(this)
         }
         return true
     }

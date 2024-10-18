@@ -7,16 +7,13 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.activitytest.BaseActivity
 import com.example.activitytest.R
 import com.example.activitytest.databinding.KNavigationViewBinding
-import com.google.android.material.snackbar.Snackbar
+import com.example.activitytest.twelve.base.showSnackbar
 
-class NavigationViewActivity  : BaseActivity() {
+class NavigationViewActivity : BaseActivity() {
     companion object {
         fun actionStart(context: Context, params: String) {
             val intent = Intent(context, NavigationViewActivity::class.java)
@@ -24,11 +21,12 @@ class NavigationViewActivity  : BaseActivity() {
             context.startActivity(intent)
         }
     }
+
     lateinit var kNavigationViewBinding: KNavigationViewBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        kNavigationViewBinding =KNavigationViewBinding.inflate(layoutInflater)
+        kNavigationViewBinding = KNavigationViewBinding.inflate(layoutInflater)
         setContentView(kNavigationViewBinding.root)
         setSupportActionBar(kNavigationViewBinding.toolbar)
         supportActionBar?.let {
@@ -41,11 +39,9 @@ class NavigationViewActivity  : BaseActivity() {
             true
         }
         kNavigationViewBinding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Data deleted", Snackbar.LENGTH_SHORT)
-                .setAction("Undo") {
-                    Toast.makeText(this, "Data restored", Toast.LENGTH_SHORT).show()
-                }
-                .show()
+            view.showSnackbar("Data deleted", "Undo") {
+                Toast.makeText(this, "Data restored", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

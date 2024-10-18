@@ -14,6 +14,8 @@ gsonVersion = "2.8.5"
 firebaseCrashlyticsBuildtools = "3.0.2"
 retrofitVersion = "2.6.1"
 circleImageViewVersion = "3.0.1"
+glideVersion = "4.16.0"
+swiperefreshlayoutVersion = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,6 +32,8 @@ firebase-crashlytics-buildtools = { group = "com.google.firebase", name = "fireb
 retrofit2 = {group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVersion"}
 retrofit2-converter-gson= {group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitVersion"}
 circleImageViewVersion = {group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImageViewVersion"}
+glide = {group = "com.github.bumptech.glide", name = "glide", version.ref = "glideVersion"}
+swiperefreshlayout = {group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayoutVersion"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

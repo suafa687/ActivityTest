@@ -38,5 +38,8 @@ class TwelveMainActivity : BaseActivity() {
         kTwelveMainBinding.navigationViewBtn.setOnClickListener{
             NavigationViewActivity.actionStart(this, "NavigationView")
         }
+        kTwelveMainBinding.materialCardViewBtn.setOnClickListener{
+            MaterialCardViewActivity.actionStart(this, "MaterialCardView")
+        }
     }
 }

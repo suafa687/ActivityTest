@@ -30,6 +30,12 @@
         android:theme="@style/Theme.ActivityTest"
         tools:targetApi="31">
         <activity
+            android:name=".twelve.FruitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".twelve.MaterialCardViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".twelve.NavigationViewActivity"
             android:exported="false" />
         <activity
