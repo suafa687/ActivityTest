@@ -12,6 +12,7 @@ import com.example.activitytest.nine.NineActivity
 import com.example.activitytest.seven.SevenMainActivity
 import com.example.activitytest.six.SixMainActivity
 import com.example.activitytest.ten.TenMainActivity
+import com.example.activitytest.thirteen.ThirteenActivity
 import com.example.activitytest.twelve.TwelveMainActivity
 
 class MainActivity : BaseActivity() {
@@ -63,6 +64,10 @@ class MainActivity : BaseActivity() {
         // 第十二章
         mainBinding.mbutton9.setOnClickListener {
             TwelveMainActivity.actionStart(this, "第十二章")
+        }
+        // 第十三章
+        mainBinding.mbutton10.setOnClickListener {
+            ThirteenActivity.actionStart(this, "第十三章")
         }
     }
 }

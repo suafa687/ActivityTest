@@ -30,6 +30,15 @@
         android:theme="@style/Theme.ActivityTest"
         tools:targetApi="31">
         <activity
+            android:name=".thirteen.LifecyclesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".thirteen.ViewModelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".thirteen.ThirteenActivity"
+            android:exported="false" />
+        <activity
             android:name=".twelve.FruitActivity"
             android:exported="false" />
         <activity
