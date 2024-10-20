@@ -16,9 +16,11 @@ retrofitVersion = "2.6.1"
 circleImageViewVersion = "3.0.1"
 glideVersion = "4.16.0"
 swiperefreshlayoutVersion = "1.0.0"
+roomVersion = "2.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -34,8 +36,9 @@ retrofit2-converter-gson= {group = "com.squareup.retrofit2", name = "converter-g
 circleImageViewVersion = {group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImageViewVersion"}
 glide = {group = "com.github.bumptech.glide", name = "glide", version.ref = "glideVersion"}
 swiperefreshlayout = {group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayoutVersion"}
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomVersion" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-

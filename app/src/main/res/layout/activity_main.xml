@@ -8,29 +8,18 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/forceOffline"
-        android:layout_width="409dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="45dp"
-        android:text="退出登录"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <Button
         android:id="@+id/mbutton1"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="25dp"
         android:text="第四章 UI"
-        app:layout_constraintTop_toBottomOf="@+id/forceOffline"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/mbutton2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="第五章 兼容平板"
         app:layout_constraintTop_toBottomOf="@+id/mbutton1"
         tools:ignore="MissingConstraints" />
@@ -39,7 +28,6 @@
         android:id="@+id/mbutton3"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="第六章 广播机制"
         app:layout_constraintTop_toBottomOf="@+id/mbutton2"
         tools:ignore="MissingConstraints" />
@@ -48,15 +36,14 @@
         android:id="@+id/mbutton4"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="第七章 数据持久化"
         app:layout_constraintTop_toBottomOf="@+id/mbutton3"
         tools:ignore="MissingConstraints" />
+
     <Button
         android:id="@+id/mbutton5"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="第八章 跨程序共享数据"
         app:layout_constraintTop_toBottomOf="@+id/mbutton4"
         tools:ignore="MissingConstraints" />
@@ -65,7 +52,6 @@
         android:id="@+id/mbutton6"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="第九章 手机多媒体"
         app:layout_constraintTop_toBottomOf="@+id/mbutton5"
         tools:ignore="MissingConstraints" />
@@ -74,7 +60,6 @@
         android:id="@+id/mbutton7"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="第十章 后台服务"
         app:layout_constraintTop_toBottomOf="@+id/mbutton6"
         tools:ignore="MissingConstraints" />
@@ -83,24 +68,56 @@
         android:id="@+id/mbutton8"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="第十一章 网络技术"
         app:layout_constraintTop_toBottomOf="@+id/mbutton7"
         tools:ignore="MissingConstraints" />
+
     <Button
         android:id="@+id/mbutton9"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="第十二章 Material"
         app:layout_constraintTop_toBottomOf="@+id/mbutton8"
         tools:ignore="MissingConstraints" />
+
     <Button
         android:id="@+id/mbutton10"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="第十三章 Jetpack"
         app:layout_constraintTop_toBottomOf="@+id/mbutton9"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/mbutton11"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:text="第十四章 Jetpack"
+        app:layout_constraintTop_toBottomOf="@+id/mbutton10"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/mbutton12"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:text="第十五章 Jetpack"
+        app:layout_constraintTop_toBottomOf="@+id/mbutton11"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/mbutton13"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:text="第十六章 Jetpack"
+        app:layout_constraintTop_toBottomOf="@+id/mbutton12"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/forceOffline"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:text="退出登录"
+        app:layout_constraintTop_toBottomOf="@+id/mbutton13"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
